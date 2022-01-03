@@ -24,6 +24,7 @@ namespace Office
         }
         static void SqlData(string connectionString)
         {
+            //try and catch for exceptions
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -117,7 +118,7 @@ namespace Office
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-
+                
                 string query = $@"DELETE FROM Employee
                                WHERE Id={Id}";
 
